@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>SaiL1020</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-08-11T07:00:49.171Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Sai Li</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>new-adventure</title>
+    <link href="http://yoursite.com/2019/08/10/new-adventure/"/>
+    <id>http://yoursite.com/2019/08/10/new-adventure/</id>
+    <published>2019-08-11T06:33:15.000Z</published>
+    <updated>2019-08-11T07:00:49.171Z</updated>
+    
+    <content type="html"><![CDATA[<p>Special edition for ruanruan in celebrating our new adventure together.</p><a id="more"></a><p>时隔数月，终于有时间写一篇，忙里偷闲。换tiào工cáo作的事尘埃落定了快两个月，只道当时春风含蓄，如今<br>盛夏凉风习习。要感谢的人太多，他们的无私帮助我会一直记着，希望能更广阔地传播开来。</p><p>我自己为找工作所做的准备暂且不表，首先特别谢谢我家的小可爱软软！不仅是这次，还有刚毕业时，<br>她帮我整理过地里提到的几乎所有promising企业的careers页面链接，不分大小，或者是最相关岗位<br>的链接，同时根据投简历情况分成不同选项卡每日update。还帮我整理了某大厂在那个时间之前1年多<br>时间里的全部电面和昂塞面经并实时更新，还按时间顺序排列得整整齐齐。</p><p>软软不是CS相关的，仍有一颗理工科的心，对各个厂的了解一点也不比CS专业的少。有时候发扬其专业<br>优势，会提供很多不同的视角的分析。纵有数不清的日夜和淡忘的时差，纵有非常非常忙的本职工作，<br>如果996都是轻松的时候，在这种极端情况下，软软就是个小超人，不断输送着她的锦囊妙计。她时常会<br>产生一些奇妙的想法和念头，然后问我能不能用代码实现。刷刷这样的题，比LC和TC更有乐趣。</p><p>给软软买了好用的相机，要带她看遍世间星空，感受万物美妙，也更想早点把抱她回家。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Special edition for ruanruan in celebrating our new adventure together.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="g, ruan" scheme="http://yoursite.com/tags/g-ruan/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dell Windows &quot;boot device not found&quot;</title>
+    <link href="http://yoursite.com/2017/09/06/dell_boot_device_not_found/"/>
+    <id>http://yoursite.com/2017/09/06/dell_boot_device_not_found/</id>
+    <published>2017-09-06T23:36:40.000Z</published>
+    <updated>2017-09-06T20:26:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Dell laptop shows “boot device not found” after power-up.</p><p>TL;DR In BIOS, change UEFI/LEGACY to UEFI and restart.</p><a id="more"></a><h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p>My friend’s dell laptop failed to boot after starting. He left this laptop in his room for the whole summer holiday without touching it. Surprisingly, when he came back and joyfully started his laptop, ready to kick off an LOL game, he got this annoying message with dark background. He was reluctant to bring his Macbook Pro for games. After enduring terrible shortcuts experience on Mac, he asked me for help while we were having lunch together, for re-installing his Windows 10 system. This was his last choice to do so. I agreed since there was no important file inside.</p><h3 id="Routines"><a href="#Routines" class="headerlink" title="Routines"></a>Routines</h3><p>My friend showed me the message by clicking the power-up button. Why not found? He did not know. Okay, no problem. Let’s set off.</p><p>I have talked about how to install Win10 by USB drive before (See <a href="/2017/03/25/install-win10/">this</a>). It took me about half an hour to get the USB ready for booting.</p><p>I knew the USB boot can be directly chosen for the current boot option, because there was none option before. But I still push F2F2F2 while the Dell logo was appearing. It led me to the BIOS. I checked the order of boot options and other System Boot configurations or so. In case some unexpected error occurred during USB booting, I clicked the “restore to default” button. Everything looked fine.</p><h3 id="Deja-Vu-Message"><a href="#Deja-Vu-Message" class="headerlink" title="Deja Vu Message"></a>Deja Vu Message</h3><p>After the normal blue window, the language option, no product key, Win10 professional, must accept terms, and customize, I got to choose on which disk I would like to install the Win10. I found the OS disk and clicked. But a warning showed notorious message “<em>Windows cannot be installed on this disk. The selected disk is of the GPT partition style.</em>“. I met with this before but could not remember what I had done. Maybe a wipe of the part of or the whole drive? I thought. Then I did found the solution on baidu jingyan and also an answer on microsoft website, using <strong>dispart</strong> command in the cmd (invoked by Shift-F10 on the same page) which would clean the whole drive.</p><p>However, I would like to try some other solution with minimal cost. Then an answer in baidu zhidao suggested those confused with this problem do as follows,</p><blockquote><p>利用U盘装系统的步骤<br>第一 进入BIOS，找SECURITY—SECURE BOOT中的SECURE BOOT 由默认ENABLES 修改为DISABLED. 将UEFI/LEGACY BOOT，改为UEFI 模式 此模式支持GPT安装 保存退出<br>第二 也是最重要的 U盘装系统时将U盘格式化为FAT32格式非NTFS格式<br>然后就安装一般程序安装即可<br>这样就不用shift+F10转换格式 将整个硬盘格式化了</p></blockquote><blockquote><p>Steps on installing win system by usb<br>First, go to BIOS, find SECURITY–&gt;SECURE BOOT, change SECURE BOOT from ENABLED to DISABLED. Then, change UEFI/LEGACY BOOT to UEFI which supports GPT type. Save and Exit.<br>Second, more importantly, select FAT32 type not NTFS type while burning the usb.<br>Last, follow routines of installation.<br>In this way, no need to format the disk by shift-F10</p></blockquote><h3 id="The-Surprise-Result"><a href="#The-Surprise-Result" class="headerlink" title="The Surprise Result"></a>The Surprise Result</h3><p>Perfect! Let’s give it a try. But I found that SECURE BOOT was already DISABLED. And it took me a while to locate UEFI/LEGACY, it was in the above, different sub-menu. Aha, swiched to UEFI. First step done.</p><p>I was not sure whether my burned USB was in NTFS or not. Probably was. I said, fine, let’s just try again to see if there would be a warning again.</p><p>Yes, expectedly, booting again. Wait, “is it usb booting?” “No, don’t think so.” Unexpectedly, his original Win10 system waked up. Ahoo, no more installation! “Yes!”</p><p>I just changed the LEGACY mode to UEFI mode, and it definetely worked. It looks like, “Asked a programmer what surprises you most, and he or she answered my code works :)”</p><p>Have a nice beginning of the new semester guys! And get the job!</p><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul><li><a href="https://answers.microsoft.com/zh-hans/windows/forum/windows_10-update/u%E7%9B%98%E5%AE%89%E8%A3%85win10%E6%97%B6/f6c8e140-2a36-4859-afee-ca7abfb796c7?auth=1" target="_blank" rel="noopener">Microsoft anwser</a></li><li><a href="http://jingyan.baidu.com/article/08b6a591c82df414a8092224.html" target="_blank" rel="noopener">Baidu jingyan solution</a></li><li><a href="https://zhidao.baidu.com/question/1753578535535341788.html" target="_blank" rel="noopener">Baidu zhidao answer on 2017-04-15 14:48</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Dell laptop shows “boot device not found” after power-up.&lt;/p&gt;
+&lt;p&gt;TL;DR In BIOS, change UEFI/LEGACY to UEFI and restart.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="windows boot uefi" scheme="http://yoursite.com/tags/windows-boot-uefi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 10 Installation by USB drive</title>
+    <link href="http://yoursite.com/2017/03/25/install-win10/"/>
+    <id>http://yoursite.com/2017/03/25/install-win10/</id>
+    <published>2017-03-26T01:55:34.000Z</published>
+    <updated>2017-03-26T01:42:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>介绍了制作 U 盘安装 Windows 10 的步骤。<br>文在前，图在后。</p><a id="more"></a><h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><ul><li>事先备份 C 盘重要文件，或者安装在 C 盘的软件配置等</li><li>需要大致记一下 C 盘有多大空间，等下安装时便于选择，因为需要格式化这个盘，再安装</li><li>Chrome 的密码导出功能<ul><li>在地址栏中输入 <a href="chrome://flags" target="_blank" rel="noopener">chrome://flags</a></li><li>Ctrl + F 搜索 Password import and export</li><li>选择启用</li><li>重启浏览器后，「设置」—「显示高级设置」—「密码和表单」</li><li>点击「管理密码」—「导出」，输入 Windows 密码即可导出 csv 文件</li><li>请妥善保管，比如存在另一个 U 盘中</li></ul><ol><li>启用 Password import and export<blockquote><p><img src="/images/win10/0_chrome_pwd.png" alt="chrome_pwd"></p></blockquote></li><li>点击「管理密码」<blockquote><p><img src="/images/win10/0_chrome_pwd_mng.png" alt="chrome_pwd_mng"></p></blockquote></li><li>「导出」<blockquote><p><img src="/images/win10/0_chrome_pwd_export.png" alt="chrome_pwd_export"></p></blockquote></li></ol></li></ul><h3 id="下载Win10"><a href="#下载Win10" class="headerlink" title="下载Win10"></a>下载Win10</h3><ul><li>微软官方下载 ISO文件<br><a href="https://www.microsoft.com/zh-cn/software-download/windows10ISO" target="_blank" rel="noopener">https://www.microsoft.com/zh-cn/software-download/windows10ISO</a></li><li>选择第一个版本 -&gt; Windows 10<blockquote><p><img src="/images/win10/1_win10_download.png" alt="win10_download"></p></blockquote></li></ul><h3 id="制作启动-U-盘"><a href="#制作启动-U-盘" class="headerlink" title="制作启动 U 盘"></a>制作启动 U 盘</h3><ul><li>使用拥有至少 5GB 空间的空白 U 盘，因为稍后制作过程会自动格式化 U 盘</li><li>用360软件管家搜索 UltraISO，中文名叫软碟通，安装时选择“继续试用”</li><li>用 UltraISO 打开 Win10 的 ISO镜像</li><li>插上 U 盘后，依次点击【启动】——【写入硬盘映像】</li><li>【硬盘驱动器】选择 U 盘 ——【写入方式】选择【USB-HDD+】——【隐藏启动方式】选择【无】—— 点击【写入】</li><li>显示【刻录成功】即可，约几分钟</li></ul><ol><li>下载 UltraISO 软碟通<blockquote><p><img src="/images/win10/2_ultraiso_download.png" alt="ultraiso_download"></p></blockquote></li><li>打开 Win10 的 ISO镜像<blockquote><p><img src="/images/win10/3_ultraiso_open_file.png" alt="ultraiso_open_file"></p></blockquote></li><li>【启动】——【写入硬盘映像】<blockquote><p><img src="/images/win10/4_ultraiso_launch.png" alt="ultraiso_launch"></p></blockquote></li><li>【写入】<blockquote><p><img src="/images/win10/5_ultraiso_burn.png" alt="ultraiso_burn"></p></blockquote></li><li>【刻录成功】<blockquote><p><img src="/images/win10/6_ultraiso_success.png" alt="ultraiso_success"></p></blockquote></li></ol><h3 id="选择-U-盘启动"><a href="#选择-U-盘启动" class="headerlink" title="选择 U 盘启动"></a>选择 U 盘启动</h3><ul><li>开机按 F2 加载 BIOS ——【Boot】选项卡</li><li>向下移动光标，选中【Boot Option #1】并按Enter —— 在选项列表中选择 USB 设备（或者 USB-HDD 之类的）</li><li>完成设置之后按 F10 键，在弹出的提示窗口中选择 Yes 回车确认重启电脑</li></ul><ol><li>【Boot】选项卡<blockquote><p><img src="/images/win10/7_bios_boot.png" alt="bios_boot"></p></blockquote></li><li>【Boot Option #1】<blockquote><p><img src="/images/win10/8_bios_boot_option.png" alt="bios_boot_option"></p></blockquote></li><li>选择 USB 设备<blockquote><p><img src="/images/win10/8_bios_usb.png" alt="bios_boot_option"></p></blockquote></li></ol><h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><ul><li>重启后，U盘引导系统进入 Win10 安装程序</li><li>语言、区域和输入法设置</li><li>点击“现在安装”</li><li>安装密钥 <strong>VK7JG-NPHTM-C97JM-9MPGT-3V66T</strong> （只用于专业版安装，激活无效）（也可以先“跳过”，但在这里输入吧）</li><li>选择“<strong>Windows 10 专业版</strong>”，点击“下一步”继续</li><li>勾选“我接受许可条款”后，点击“下一步”继续</li><li>选择第二项“<strong>自定义</strong>”安装方式</li><li>先将 C盘（注意大小选对） 系统盘格式化，并选择这个分区，然后“下一步”</li><li>左下角的“自定义设置”，然后全部 <strong>关</strong> <strong>关</strong> <strong>关</strong></li><li>选择“我拥有它”</li><li>左下方“跳过此步骤”来使用<strong>本地账户</strong>登录</li><li>本地账户创建页面，填写用户名并且设置密码和密码提示后（必填），点击“下一步”即可</li><li>等待Win10进行应用设置，可能会有奇葩的提示语</li><li>设置完成后直接进入Win10桌面，安装结束</li></ul><ol start="0"><li>进入 Win10 安装程序<blockquote><p><img src="/images/win10/9_0_start.png" alt="9_0_start"></p></blockquote></li><li>语言、区域和输入法设置<blockquote><p><img src="/images/win10/9_1_option.png" alt="9_1_option"></p></blockquote></li><li>现在安装<blockquote><p><img src="/images/win10/9_2_install.png" alt="9_2_install"></p></blockquote></li><li>安装密钥<blockquote><p><img src="/images/win10/9_3_key.png" alt="9_3_key"></p></blockquote></li><li><strong>Windows 10 专业版</strong><blockquote><p><img src="/images/win10/9_4_professional.png" alt="9_4_professional"></p></blockquote></li><li>我接受许可条款<blockquote><p><img src="/images/win10/9_5_accept.png" alt="9_5_accept"></p></blockquote></li><li><strong>自定义</strong><blockquote><p><img src="/images/win10/9_6_customed.png" alt="9_6_customed"></p></blockquote></li><li>先将 C盘 格式化，并选择这个分区<blockquote><p><img src="/images/win10/9_7_C_disk.png" alt="9_7_C_disk"></p></blockquote></li><li>安装ing<blockquote><p><img src="/images/win10/9_8_installing.png" alt="9_8_installing"></p></blockquote></li><li>自定义设置，然后全部 <strong>关</strong> <strong>关</strong> <strong>关</strong><blockquote><p><img src="/images/win10/9_9_customed.png" alt="9_9_customed"></p></blockquote></li><li>转圈<blockquote><p><img src="/images/win10/9_10_wait.png" alt="9_10_wait"></p></blockquote></li><li>我拥有它<blockquote><p><img src="/images/win10/9_11_owner.png" alt="9_11_owner"></p></blockquote></li><li>左下方“跳过此步骤”<blockquote><p><img src="/images/win10/9_12_personalized.png" alt="9_12_personalized"></p></blockquote></li><li>本地账户创建页面<blockquote><p><img src="/images/win10/9_13_username.png" alt="9_13_username"></p></blockquote></li><li>等待设置，即可<blockquote><p><img src="/images/win10/9_14_setting.png" alt="9_14_setting"><br><img src="/images/win10/9_15_soon.png" alt="9_15_soon"><br><img src="/images/win10/9_16_windows.png" alt="9_16_windows"></p></blockquote></li></ol><p><strong>参考</strong>：<br>《如何在Chrome浏览器中导入和导出密码》<br><a href="http://os.51cto.com/art/201702/530109.htm" target="_blank" rel="noopener">http://os.51cto.com/art/201702/530109.htm</a><br>《软碟通UltraISO制作Win10安装U盘教程》<br><a href="http://pcedu.pconline.com.cn/707/7074257.html" target="_blank" rel="noopener">http://pcedu.pconline.com.cn/707/7074257.html</a><br>《华硕笔记本BIOS设置u盘启动图文详解》<br><a href="http://www.bigbaicai.com/rjjc/bios/963.html" target="_blank" rel="noopener">http://www.bigbaicai.com/rjjc/bios/963.html</a><br>《最方便最灵活！Win10正式版U盘安装方法详解》<br><a href="http://www.ithome.com/html/win10/164736.htm" target="_blank" rel="noopener">http://www.ithome.com/html/win10/164736.htm</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;介绍了制作 U 盘安装 Windows 10 的步骤。&lt;br&gt;文在前，图在后。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="article" scheme="http://yoursite.com/tags/article/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Continue Procrastinating :)</title>
+    <link href="http://yoursite.com/2017/03/19/continue-procrastinating/"/>
+    <id>http://yoursite.com/2017/03/19/continue-procrastinating/</id>
+    <published>2017-03-19T18:42:36.000Z</published>
+    <updated>2017-03-19T16:18:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>作者分析了那些拖延帮的“忙”<br>拖延真是让人喜爱：）</p><a id="more"></a><p>原作者：游识猷<br>from: 科学松鼠会《<a href="http://songshuhui.net/archives/96895" target="_blank" rel="noopener">那些拖延帮我的忙</a>》</p><p><img src="/images/do_it.jpg" alt="to do or not to do"></p><p>债务不会忘记你，不管多久远。当我发现邮箱里躺着出版社编辑的信时，就像被好容易超度掉的厉鬼再度缠上一样。总之，编辑问，我翻译的那本科普书进度怎样了。</p><p>进度怎样？我压根不记得这回事！但Gmail的搜索功能够好，我不得不直面自己两年前答应在八个月内翻译好那本书……然后我做了当下最符合直觉的反应：一个字也没回，直接关掉邮箱，转去做其他工作。但我的心底有个电子音每隔五分钟报时一次——“翻译书”，它说，“编辑，出版社，两年，邮件……”我停下工作，转在网上溜达，看到令人义愤填膺的新闻，就把它批驳一番。批无可批时，我关掉浏览器，开始玩Windows自带的蜘蛛纸牌游戏——天知道我上次玩是什么时候，两年前？该死，怎么又想起两年啦。</p><p>当然我不是瞬间燃起了对蜘蛛纸牌的真爱，这只是一个逃避现实的“安全屋”。任外面电闪雷鸣，这里安安静静，只要将同花色的牌按大小摞到一起，噩运暂停，风雨不进，通关时甚至还有虚拟烟花绽放……</p><p>这就是拖延带给我的好处——内在的安全和平静，哪怕只是暂时的假象。</p><p>与拖延相处多年，我已经意识到拖延并不是我的敌人……不，与此相反，拖延是我招来的友军，是我在绝望中找到的出路。拖延主要带来两大类好处：</p><h3 id="一，拖延让别人更爱你。"><a href="#一，拖延让别人更爱你。" class="headerlink" title="一，拖延让别人更爱你。"></a>一，拖延让别人更爱你。</h3><p>通过拖延，你在自己的成功路上设置障碍，最终你成功地和朋友家人抱团取暖，没有高升，就没有伤害。你不会因迅速升迁而远离老朋友。你也不需要搬到大城市或者飞来飞去，让依赖你的家人孤单伤感。</p><p>通过搁置自己的任务，去帮助他人，你收获了“人情”和感恩。你会觉得自己是个有牺牲精神的高尚之人，而且，你是无偿援助，你根本不可能做错——帮一分就该收获一分感谢，就算帮了倒忙，至少你是好意。</p><p>通过拖延你不情愿的请求，你可以避免跟别人正面冲突。当别人要你做一件你不想做的事情时，你可以假意答应，然后不断拖延——谁能怪你呢？你只是太忙了。同时，当你不得不伤害别人——比如告诉编辑“那本书我还没翻译完呢”这种悲惨时，难道不是多拖一秒都更好吗？</p><h3 id="二，拖延让你更爱自己。"><a href="#二，拖延让你更爱自己。" class="headerlink" title="二，拖延让你更爱自己。"></a>二，拖延让你更爱自己。</h3><p>拖延让你不必面对“我是不是能力不足”这个千古难题。有时你在最后阶段内做到了本来需要花更长时间的事——这正说明你能力高强。有时你成功拖到了时间根本不够用的时刻，于是失败是且只是拖延的锅……还有时，通过发展多种才艺，你成功地证明了自己文成武就能刺绣能打球，在重点事务上进展缓慢，只是因为兴趣广泛不够专注，绝不是因为能力不足……</p><p>拖延满足了你的完美主义。别人在进步，但那只是因为你看不上那些路。你不想用“此刻的状态”去抓“当下的机会”。你要等到“完全准备好时”再去抓“最适合自己的机会”——这样，你就不会在未来为了此刻的将就而懊恼。</p><p>拖延让你减少对自己的攻击。通过全神贯注地看你不想看的书，玩你不想玩的游戏，刷你不想刷的网，你忘却了对当下的自己的不满。</p><p>拖延让你找回控制感。当有人吩咐你做事时，你虽然不敢说“不”，但你可以不断拖延，“没人能命令我做我不想做的事”，你心满意足，自言自语……</p><h3 id="拖延不是“问题本身”，它是“解决方案”"><a href="#拖延不是“问题本身”，它是“解决方案”" class="headerlink" title="拖延不是“问题本身”，它是“解决方案”"></a>拖延不是“问题本身”，它是“解决方案”</h3><p>说到底，拖延不是“问题本身”，它是“解决方案”。很多时候，要不是拖延，我们就要直面各种不被爱的痛苦与不受控的恐惧。但拖延也有高昂代价——内在焦灼绝望，外在停滞不前。</p><p>我问A，“我两年前答应翻译的书拖到现在了，怎么办？”A说，“两年？大概编辑也忘了吧？没事，你不会因为这个就被编辑掐死的。”我问B，“我两年前答应翻译的书拖到现在了，怎么办？” B说，“合同规定要赔多少钱？没事，咱们一起凑钱赔……” 对话完毕，我鼓起勇气老实回信。你猜怎样，编辑回信说，可以再宽限几个月——棒极了，现在我可以开始新一轮与拖延的斗争啦。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作者分析了那些拖延帮的“忙”&lt;br&gt;拖延真是让人喜爱：）&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="article" scheme="http://yoursite.com/tags/article/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/03/19/hello-world/"/>
+    <id>http://yoursite.com/2017/03/19/hello-world/</id>
+    <published>2017-03-19T16:25:13.000Z</published>
+    <updated>2017-03-19T16:25:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hexo自动生成的第一篇md文档<br>hexo commands: n/g/s/d</p><a id="more"></a><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hexo自动生成的第一篇md文档&lt;br&gt;hexo commands: n/g/s/d&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Build ur Static Webpages</title>
+    <link href="http://yoursite.com/2017/03/17/build-static-web-pages/"/>
+    <id>http://yoursite.com/2017/03/17/build-static-web-pages/</id>
+    <published>2017-03-17T23:36:40.000Z</published>
+    <updated>2017-03-19T16:25:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>作者介绍了做静态网页所要学习的知识点<br>(X)HTML/CSS/Web-standards</p><a id="more"></a><p>原作者：杨帆 《学做网页这件小事》<br>from: <a href="https://www.pureweber.com/article/how-to-learn-web-programing/" target="_blank" rel="noopener">PureWeber – 纯粹互联网</a><br>origianl link: <a href="http://www.fancycedar.info/2011/03/how-to-learn-web-programing/" target="_blank" rel="noopener">已失效</a></p><p>神马都是浮云，神马都在云端。</p><p>在这个时代，很多人都会面临网页制作这个事情。特别是对广大程序猿们，网页制作应该是很基本的技能了——你也不用会得太多，但你也不能一点不会。</p><p>但是对于到底怎么学做网页这个小事，对新手来说却是个大事。遵循“复用”的原则，我希望这一篇文章能解除多个人的疑惑。</p><p>俗话说，师父领进门，修行靠个人。这里不会教你怎样做美工怎样编码怎样制作表单怎样控制样式，这里<strong>只会教你怎样去学习</strong>制作网页，怎样从一个菜鸟成长为一个老鸟。</p><p>我只是一个掌灯的NPC，打怪练级还得靠你自己。</p><p>谈点正经的：以下的内容请循序渐进，一步一步来。</p><h3 id="明确概念"><a href="#明确概念" class="headerlink" title="明确概念"></a>明确概念</h3><p>做网页 vs 做网站</p><ul><li><p>做网页：这里就只代表制作静态网页(<a href="https://en.wikipedia.org/wiki/Static_web_page" target="_blank" rel="noopener">wiki</a>, <a href="http://baike.baidu.com/item/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5" target="_blank" rel="noopener">baike</a>)。静态网页是一切网站的基础。制作静态网页非常之简单，少看个电影就能入门了。而且很多童鞋很多时候其实就只需要几个静态网页。本文会集中火力讲解怎样学习静态网页的制作。</p></li><li><p>做网站：指动态网页(<a href="https://en.wikipedia.org/wiki/Dynamic_web_page" target="_blank" rel="noopener">wiki</a>, <a href="http://baike.baidu.com/item/%E5%8A%A8%E6%80%81%E7%BD%91%E9%A1%B5" target="_blank" rel="noopener">baike</a>)。这个需要有高级程序语言的基础，这里不讲。</p></li></ul><p>设计网页 vs 制作网页</p><ul><li><p>设计网页：简单地说，就是指将网页画出来。这个属于美工的范畴，而不是程序。程序猿们还是先使劲学程序吧，你学的那点很难上得了厅堂。</p></li><li><p>制作网页：简单地说，就是指将美工画出来的网页做成静态网页。目前国内这个还是程序猿的活。但国外很多美工都能做出代码质量很高的静态网页。因为静态网页的制作真的很好学，很简单。看到这里，你的信心增强不少了吧！</p></li></ul><h3 id="Web标准"><a href="#Web标准" class="headerlink" title="Web标准"></a><span id="web-standards">Web标准</span></h3><ul><li>什么是<a href="https://www.w3cschool.cn/w3c_intro.html" target="_blank" rel="noopener">W3C</a>？(<a href="https://www.w3.org/" target="_blank" rel="noopener">官方网站</a>)</li><li>Web标准 (<a href="https://zh.wikipedia.org/wiki/网页标准" target="_blank" rel="noopener">wiki</a>, <a href="http://baike.baidu.com/item/WEB%E6%A0%87%E5%87%86" target="_blank" rel="noopener">baike</a>)的含义</li></ul><p>这个部分第一次看的时候，不用看得太明白。等掌握了HTML和CSS之后应该再复习一下这个部分。</p><h3 id="唠叨几句"><a href="#唠叨几句" class="headerlink" title="唠叨几句"></a>唠叨几句</h3><p>请同学们先暂时压抑一下自己写代码的冲动，请先看看以下的几点注意事项：</p><ul><li>用什么来写代码？不要使用自动生成代码的工具！不要用Dreamwaver的设计模式！如果你对自己要求不高，你可以使用Dreamwaver的代码模式。如果你对自己要求很高，推荐使用有代码高亮功能的文本编辑器，比如：Vim (<a href="http://xbeta.info/vim-tutorials.htm" target="_blank" rel="noopener">善用佳软介绍</a>)，VS Code，Atom</li><li>看教程时，所有示例代码必须自己实现</li><li>Dirty your hands. 实现示例时，所有的代码必须手动输入。从第一个示例程序就开始坚持！Ctrl+C Ctrl+V的话是学不会的。得真刀真枪才能锻炼出来</li><li>当你等下看教程的时候，会发现会有很多内容，你或许会感叹内容太多甚至望而却步。不要慌！其实教程的很多东西都是目前不用屌的。先把这里罗列出的入门知识看完再去慢慢学其他的也不迟</li><li>当你遇到问题的时候，首先应该思考——找到问题所在并尝试去找解决方案，其次应该查询参考手册，再次问Google（百度就免了），最后也可以到这里提问</li></ul><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML并非是单纯的一行一行的代码，而应该有严禁的结构——DOM。您写的不是代码，您写的也不是寂寞，您写的是一棵树。</p><p>HTML就是网页的骨骼，就是网页的结构。</p><p>这个阶段只看HTML基础教程。</p><ul><li>W3School (<a href="https://www.w3schools.com/html/default.asp" target="_blank" rel="noopener">en</a>, <a href="http://www.w3school.com.cn/html/index.asp" target="_blank" rel="noopener">zh</a>)</li><li>网页设计师 (<a href="http://www.w3cn.org/" target="_blank" rel="noopener">old</a>)</li></ul><p>对于HTML，就只需要学习这么多。不要惊讶，这就是基础，就这么少，但一定要全部掌握。</p><h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>CSS就是网页的皮肤。学会CSS之后你就可以随心所欲地控制网页的样式了。</p><ul><li>CSS教程(<a href="https://www.w3schools.com/css/default.asp" target="_blank" rel="noopener">en</a>, <a href="http://www.w3school.com.cn/css/index.asp" target="_blank" rel="noopener">zh</a>) 也要注重实践哦！</li></ul><h3 id="XHTML-CSS"><a href="#XHTML-CSS" class="headerlink" title="XHTML+CSS"></a>XHTML+CSS</h3><p>这个部分将告诉你怎样将HTML和CSS结合起来使用，做出漂亮且实用的网页。一定要手动编写代码实践！</p><ul><li><a href="http://www.w3school.com.cn/xhtml/xhtml_html.asp" target="_blank" rel="noopener">XHTML与HTML的异同</a></li><li><a href="http://www.w3cn.org/article/step/index.html" target="_blank" rel="noopener">循序渐进</a> 这里有12篇文章</li><li><a href="http://www.blueidea.com/tech/site/2006/3574.asp" target="_blank" rel="noopener">DIV+CSS入门</a> 蓝色理想网站的文章</li></ul><h3 id="回头复习-Web标准"><a href="#回头复习-Web标准" class="headerlink" title="回头复习  Web标准"></a>回头复习  <a href="#web-standards">Web标准</a></h3><h3 id="入门了"><a href="#入门了" class="headerlink" title="入门了"></a>入门了</h3><p>如果您能耐心地看完这里给出的资料，并且都实践了，那么恭喜您，入门成功！这个时候你可以说自己会做静态网页了。</p><p>当然，要学的其实还有很多很多，比如如何切图，如何使用<em>JavaScript</em>等。只学W3School是远远不够的。</p><p>附：<a href="https://www.pureweber.com/article/html5/" target="_blank" rel="noopener">HTML5新特性概览</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作者介绍了做静态网页所要学习的知识点&lt;br&gt;(X)HTML/CSS/Web-standards&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+    
+  </entry>
+  
+</feed>

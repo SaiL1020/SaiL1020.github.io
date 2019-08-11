@@ -1,0 +1,174 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Windows 10 Installation by USB drive · SaiL1020</title><meta name="description" content="Windows 10 Installation by USB drive - Sai Li"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/images/viveparis-small.jpg"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="SaiL1020"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/images/viveparis.jpg" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/SaiL1020" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Windows 10 Installation by USB drive</h1><div class="post-info">Mar 25, 2017</div><div class="post-content"><p>介绍了制作 U 盘安装 Windows 10 的步骤。<br>文在前，图在后。</p>
+<a id="more"></a>
+
+<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><ul>
+<li>事先备份 C 盘重要文件，或者安装在 C 盘的软件配置等</li>
+<li>需要大致记一下 C 盘有多大空间，等下安装时便于选择，因为需要格式化这个盘，再安装</li>
+<li>Chrome 的密码导出功能<ul>
+<li>在地址栏中输入 <a href="chrome://flags" target="_blank" rel="noopener">chrome://flags</a></li>
+<li>Ctrl + F 搜索 Password import and export</li>
+<li>选择启用</li>
+<li>重启浏览器后，「设置」—「显示高级设置」—「密码和表单」</li>
+<li>点击「管理密码」—「导出」，输入 Windows 密码即可导出 csv 文件</li>
+<li>请妥善保管，比如存在另一个 U 盘中</li>
+</ul>
+<ol>
+<li>启用 Password import and export<blockquote>
+<p><img src="/images/win10/0_chrome_pwd.png" alt="chrome_pwd"></p>
+</blockquote>
+</li>
+<li>点击「管理密码」<blockquote>
+<p><img src="/images/win10/0_chrome_pwd_mng.png" alt="chrome_pwd_mng"></p>
+</blockquote>
+</li>
+<li>「导出」<blockquote>
+<p><img src="/images/win10/0_chrome_pwd_export.png" alt="chrome_pwd_export"></p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="下载Win10"><a href="#下载Win10" class="headerlink" title="下载Win10"></a>下载Win10</h3><ul>
+<li>微软官方下载 ISO文件<br><a href="https://www.microsoft.com/zh-cn/software-download/windows10ISO" target="_blank" rel="noopener">https://www.microsoft.com/zh-cn/software-download/windows10ISO</a></li>
+<li>选择第一个版本 -&gt; Windows 10<blockquote>
+<p><img src="/images/win10/1_win10_download.png" alt="win10_download"></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="制作启动-U-盘"><a href="#制作启动-U-盘" class="headerlink" title="制作启动 U 盘"></a>制作启动 U 盘</h3><ul>
+<li>使用拥有至少 5GB 空间的空白 U 盘，因为稍后制作过程会自动格式化 U 盘</li>
+<li>用360软件管家搜索 UltraISO，中文名叫软碟通，安装时选择“继续试用”</li>
+<li>用 UltraISO 打开 Win10 的 ISO镜像</li>
+<li>插上 U 盘后，依次点击【启动】——【写入硬盘映像】</li>
+<li>【硬盘驱动器】选择 U 盘 ——【写入方式】选择【USB-HDD+】——【隐藏启动方式】选择【无】—— 点击【写入】</li>
+<li>显示【刻录成功】即可，约几分钟</li>
+</ul>
+<ol>
+<li>下载 UltraISO 软碟通<blockquote>
+<p><img src="/images/win10/2_ultraiso_download.png" alt="ultraiso_download"></p>
+</blockquote>
+</li>
+<li>打开 Win10 的 ISO镜像<blockquote>
+<p><img src="/images/win10/3_ultraiso_open_file.png" alt="ultraiso_open_file"></p>
+</blockquote>
+</li>
+<li>【启动】——【写入硬盘映像】<blockquote>
+<p><img src="/images/win10/4_ultraiso_launch.png" alt="ultraiso_launch"></p>
+</blockquote>
+</li>
+<li>【写入】<blockquote>
+<p><img src="/images/win10/5_ultraiso_burn.png" alt="ultraiso_burn"></p>
+</blockquote>
+</li>
+<li>【刻录成功】<blockquote>
+<p><img src="/images/win10/6_ultraiso_success.png" alt="ultraiso_success"></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="选择-U-盘启动"><a href="#选择-U-盘启动" class="headerlink" title="选择 U 盘启动"></a>选择 U 盘启动</h3><ul>
+<li>开机按 F2 加载 BIOS ——【Boot】选项卡</li>
+<li>向下移动光标，选中【Boot Option #1】并按Enter —— 在选项列表中选择 USB 设备（或者 USB-HDD 之类的）</li>
+<li>完成设置之后按 F10 键，在弹出的提示窗口中选择 Yes 回车确认重启电脑</li>
+</ul>
+<ol>
+<li>【Boot】选项卡<blockquote>
+<p><img src="/images/win10/7_bios_boot.png" alt="bios_boot"></p>
+</blockquote>
+</li>
+<li>【Boot Option #1】<blockquote>
+<p><img src="/images/win10/8_bios_boot_option.png" alt="bios_boot_option"></p>
+</blockquote>
+</li>
+<li>选择 USB 设备<blockquote>
+<p><img src="/images/win10/8_bios_usb.png" alt="bios_boot_option"></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><ul>
+<li>重启后，U盘引导系统进入 Win10 安装程序</li>
+<li>语言、区域和输入法设置</li>
+<li>点击“现在安装”</li>
+<li>安装密钥 <strong>VK7JG-NPHTM-C97JM-9MPGT-3V66T</strong> （只用于专业版安装，激活无效）（也可以先“跳过”，但在这里输入吧）</li>
+<li>选择“<strong>Windows 10 专业版</strong>”，点击“下一步”继续</li>
+<li>勾选“我接受许可条款”后，点击“下一步”继续</li>
+<li>选择第二项“<strong>自定义</strong>”安装方式</li>
+<li>先将 C盘（注意大小选对） 系统盘格式化，并选择这个分区，然后“下一步”</li>
+<li>左下角的“自定义设置”，然后全部 <strong>关</strong> <strong>关</strong> <strong>关</strong></li>
+<li>选择“我拥有它”</li>
+<li>左下方“跳过此步骤”来使用<strong>本地账户</strong>登录</li>
+<li>本地账户创建页面，填写用户名并且设置密码和密码提示后（必填），点击“下一步”即可</li>
+<li>等待Win10进行应用设置，可能会有奇葩的提示语</li>
+<li>设置完成后直接进入Win10桌面，安装结束</li>
+</ul>
+<ol start="0">
+<li>进入 Win10 安装程序<blockquote>
+<p><img src="/images/win10/9_0_start.png" alt="9_0_start"></p>
+</blockquote>
+</li>
+<li>语言、区域和输入法设置<blockquote>
+<p><img src="/images/win10/9_1_option.png" alt="9_1_option"></p>
+</blockquote>
+</li>
+<li>现在安装<blockquote>
+<p><img src="/images/win10/9_2_install.png" alt="9_2_install"></p>
+</blockquote>
+</li>
+<li>安装密钥<blockquote>
+<p><img src="/images/win10/9_3_key.png" alt="9_3_key"></p>
+</blockquote>
+</li>
+<li><strong>Windows 10 专业版</strong><blockquote>
+<p><img src="/images/win10/9_4_professional.png" alt="9_4_professional"></p>
+</blockquote>
+</li>
+<li>我接受许可条款<blockquote>
+<p><img src="/images/win10/9_5_accept.png" alt="9_5_accept"></p>
+</blockquote>
+</li>
+<li><strong>自定义</strong><blockquote>
+<p><img src="/images/win10/9_6_customed.png" alt="9_6_customed"></p>
+</blockquote>
+</li>
+<li>先将 C盘 格式化，并选择这个分区<blockquote>
+<p><img src="/images/win10/9_7_C_disk.png" alt="9_7_C_disk"></p>
+</blockquote>
+</li>
+<li>安装ing<blockquote>
+<p><img src="/images/win10/9_8_installing.png" alt="9_8_installing"></p>
+</blockquote>
+</li>
+<li>自定义设置，然后全部 <strong>关</strong> <strong>关</strong> <strong>关</strong><blockquote>
+<p><img src="/images/win10/9_9_customed.png" alt="9_9_customed"></p>
+</blockquote>
+</li>
+<li>转圈<blockquote>
+<p><img src="/images/win10/9_10_wait.png" alt="9_10_wait"></p>
+</blockquote>
+</li>
+<li>我拥有它<blockquote>
+<p><img src="/images/win10/9_11_owner.png" alt="9_11_owner"></p>
+</blockquote>
+</li>
+<li>左下方“跳过此步骤”<blockquote>
+<p><img src="/images/win10/9_12_personalized.png" alt="9_12_personalized"></p>
+</blockquote>
+</li>
+<li>本地账户创建页面<blockquote>
+<p><img src="/images/win10/9_13_username.png" alt="9_13_username"></p>
+</blockquote>
+</li>
+<li>等待设置，即可<blockquote>
+<p><img src="/images/win10/9_14_setting.png" alt="9_14_setting"><br><img src="/images/win10/9_15_soon.png" alt="9_15_soon"><br><img src="/images/win10/9_16_windows.png" alt="9_16_windows"></p>
+</blockquote>
+</li>
+</ol>
+<p><strong>参考</strong>：<br>《如何在Chrome浏览器中导入和导出密码》<br><a href="http://os.51cto.com/art/201702/530109.htm" target="_blank" rel="noopener">http://os.51cto.com/art/201702/530109.htm</a><br>《软碟通UltraISO制作Win10安装U盘教程》<br><a href="http://pcedu.pconline.com.cn/707/7074257.html" target="_blank" rel="noopener">http://pcedu.pconline.com.cn/707/7074257.html</a><br>《华硕笔记本BIOS设置u盘启动图文详解》<br><a href="http://www.bigbaicai.com/rjjc/bios/963.html" target="_blank" rel="noopener">http://www.bigbaicai.com/rjjc/bios/963.html</a><br>《最方便最灵活！Win10正式版U盘安装方法详解》<br><a href="http://www.ithome.com/html/win10/164736.htm" target="_blank" rel="noopener">http://www.ithome.com/html/win10/164736.htm</a></p>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/09/06/dell_boot_device_not_found/" class="prev">PREV</a><a href="/2017/03/19/continue-procrastinating/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'SaiL1020';
+var disqus_identifier = '2017/03/25/install-win10/';
+var disqus_title = 'Windows 10 Installation by USB drive';
+var disqus_url = 'http://yoursite.com/2017/03/25/install-win10/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//SaiL1020.disqus.com/count.js" async></script><div class="copyright"><p>© 2019 <a href="http://yoursite.com">Sai Li</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-93856243-1",'auto');ga('send','pageview');</script></body></html>
